@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        table{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+      
+
+        
+    </style>
+</head>
+<body>
+    <h1>Form</h1>
+   <table>
+    <form action="" onsubmit="display()">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="Name" id="name"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="Email" id="email"></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td><input type="radio" name="gender" id="gender">Male
+             <input type="radio" name="gender" id="gender">Female</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="check"></td>
+            <td>I accept the terms & Conditions</td>
+        </tr>
+        <tr>
+            <td><button onclick="validate()">Submit</button></td>
+        </tr>
+        
+    </form>
+   </table>
+   <script>
+function validate(){
+    let name=document.getElementById('name').value;
+    let email=document.getElementById('email').value;
+    let gender=document.querySelector('input[name="gender"]:checked');
+    let check=document.getElementById('check').checked;
+
+  
+    if(name=='' && email!=''&& gender!=null && check==true){
+        alert('Enter name');
+    }
+    if(email=='' && name!='' && gender!=null && check==true)
+    {
+        alert('Enter email');
+    }
+    if(gender==null && name!='' && email!='' && check==true)
+    {
+        alert('pick out the gender');
+    }
+    if(check==false && name!='' && email!='' && gender!=null){
+        alert('kindly check terms and conditions');
+    }
+    if(name=='' && email=='' && gender==null){
+        alert('Please fill out the fields')
+    }
+    if(name=='' && email=='' && gender!=null && check==true){
+        alert('Enter name & email');
+    }
+    if(name=='' && email!='' && gender==null &&check==true){
+        alert('Enter name & gender');
+    }
+    if(name=='' && email!='' && gender!=null &&check==false){
+        alert('Enter name & accept T&C');
+    }
+    
+    if(name!='' && email=='' && gender==null && check==true){
+        alert('Enter gender & email');
+    }
+    if(name!='' && email=='' && gender!=null &&check==false){
+        alert('Enter email & accept T&C');
+    }
+    if(name!='' && email!='' && gender==null &&check==false){
+        alert('Enter  gender & accept T&C');
+    }
+    
+    
+}
+function display(){
+    let name=document.getElementById('name').value;
+    let email=document.getElementById('email').value;
+    let gender=document.querySelector('input[name="gender"]:checked');
+    let check=document.getElementById('check').checked;
+
+    if(email!='' && name!='' && gender!=null){
+        console.log('Name',name,'Email',email,'Gender',gender);
+    }
+
+}
+   </script>
+</body>
+</html>
