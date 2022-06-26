@@ -22,7 +22,7 @@
 <body>
     <h1>Form</h1>
    <table>
-    <form action="" onsubmit="display()">
+    <form onsubmit="display()">
         <tr>
             <td>Name:</td>
             <td><input type="text" name="Name" id="name"></td>
@@ -112,7 +112,9 @@ function display(){
     let check=document.getElementById('check').checked;
 
     if(email!='' && name!='' && gender!=null){
-        console.log('Name',name,'Email',email,'Gender',gender);
+        console.log('Name',name);
+        console.log('Email',email);
+        console.log('Gender',gender);
     }
 
 }
