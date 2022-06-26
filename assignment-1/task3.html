@@ -90,6 +90,18 @@ function validate(){
     if(name!='' && email!='' && gender==null &&check==false){
         alert('Enter  gender & accept T&C');
     }
+    if(name!='' && email=='' && gender==null && check==false){
+        alert('Enter email,gender and accept T&C');
+    }
+    if(name=='' && email!='' && gender==null && check==false) {
+        alert('Enter name, gender & accept T&C');
+    }
+    if(name=='' && email=='' && gender!=null && check==false) {
+        alert('Enter name,email and accpet T&C');
+    }
+    if(name=='' & email=='' && gender==null && check==true) {
+        alert('Enter name,email and gender');
+    }
     
     
 }
